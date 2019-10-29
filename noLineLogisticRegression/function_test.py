@@ -84,12 +84,50 @@ def range_test():
         print("="*50)
 
 
+def sigmoid(x_start, x_end):
+    """
+    Compute sigmoid function
+    """
+    dot_count = 100
+    x_array = linspace(x_start, x_end, dot_count)
+    y_array = []
+    for x in x_array:
+        den = 1.0 + exp(-1.0*x)
+        gz = 1.0/den
+        y_array.append(gz)
+    plt.plot(x_array, y_array, color="red", linewidth=2)
+    plt.show()
+
+
+def zeros_test():
+    # 二维全部都是0的数组
+    x = np.zeros((4, 2))
+    # 三维全部都是0的数组
+    # x = np.zeros((4, 3, 2))
+    print(x)
+    print(x.shape)
+
+
+def dot_multiplication():
+    array_a = np.array([1, 2, 3, 4])
+    array_a.shape = (2, 2)
+    array_b = np.array([2, 3, 4, 5])
+    array_b.shape = (2, 2)
+    # dot矩阵相乘
+    array_c = array_a.dot(array_b)
+    print(array_c)
+    print(array_c.shape)
+
+
 def main():
     # test例子，需要查看那个例子就去掉注释
     # load_data_set_test()
     # numpy_c_function_test()
     # set_shape_text()
-    range_test()
+    # range_test()
+    # sigmoid(-5, 5)
+    # zeros_test()
+    dot_multiplication()
 
 
 if __name__ == '__main__':

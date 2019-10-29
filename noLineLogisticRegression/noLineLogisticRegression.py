@@ -55,10 +55,10 @@ def sigmoid(x):
 
 
 # 定义损失函数
-def costfunctionreg(theta, x, y, l):
+def costfunctionreg(initial_theta, mapped_fea, y, l):
     m = y.size
-    h = sigmoid(x.dot(theta))
-    j = -1.0 * (1.0 / m) * (np.log(h).T.dot(y) + np.log(1 - h).T.dot(1 - y)) + (l / (2.0 * m)) * np.sum(np.square(theta[1:]))
+    h = sigmoid(mapped_fea.dot(initial_theta))
+    j = -1.0 * (1.0 / m) * (np.log(h).T.dot(y) + np.log(1 - h).T.dot(1 - y)) + (l / (2.0 * m)) * np.sum(np.square(initial_theta[1:]))
     if np.isnan(j[0]):
         return np.inf
     return j[0]
@@ -73,12 +73,13 @@ def compute_grad(theta, x, y, l):
 
 
 # 梯度下降并优化
-def gradient_descent(xx, y, l):
-    initial_theta = np.zeros(xx.shape[1])
-    cost = costfunctionreg(initial_theta, xx, y, l)
+def gradient_descent(mapped_fea, y, l):
+    # 全部都是0的初始数组
+    initial_theta = np.zeros(mapped_fea.shape[1])
+    cost = costfunctionreg(initial_theta, mapped_fea, y, l)
     print('Cost: \n', cost)
     # 最优化 costfunctionreg
-    res2 = minimize(costfunctionreg, initial_theta, args=(xx, y, l), jac=compute_grad, options={'maxiter': 3000})
+    res2 = minimize(costfunctionreg, initial_theta, args=(mapped_fea, y, l), jac=compute_grad, options={'maxiter': 3000})
     return res2
 
 
