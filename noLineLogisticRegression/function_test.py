@@ -99,6 +99,28 @@ def sigmoid(x_start, x_end):
     plt.show()
 
 
+def sigmoid(x):
+    """
+    Compute sigmoid function
+    """
+    print(x)
+    den = 1.0 + exp(-1.0*x)
+    gz = 1.0/den
+    print(gz)
+
+
+def np_log():
+    a = linspace(1, 100, 1000)
+    a_log = np.log(a)
+    a10_log = np.log10(a)
+    a1p_log = np.log1p(a)
+    # fig = plt.figure(figsize=(10, 10))
+    plt.plot(a, a_log, color="red", label="a_log")
+    plt.plot(a, a10_log, color="black", label="a10_log")
+    plt.plot(a, a1p_log, color="yellow", label="a1p_log")
+    plt.show()
+
+
 def zeros_test():
     # 二维全部都是0的数组
     x = np.zeros((4, 2))
@@ -109,7 +131,7 @@ def zeros_test():
 
 
 def dot_multiplication():
-    array_a = np.array([1, 2, 3, 4])
+    array_a = np.array([0, 0, 0, 0])
     array_a.shape = (2, 2)
     array_b = np.array([2, 3, 4, 5])
     array_b.shape = (2, 2)
@@ -117,6 +139,34 @@ def dot_multiplication():
     array_c = array_a.dot(array_b)
     print(array_c)
     print(array_c.shape)
+    return array_c
+
+
+def np_square():
+    initial_theta = np.array([1, 2, 3, 4, 5])
+    # 先求平方然后求和
+    result = np.sum(np.square(initial_theta[1:]))
+    print(result)
+
+
+def T_dot():
+    # 行列転置する
+    a = np.arange(9).reshape(3, 3)
+    print(a)
+    a = a.T
+    print(a)
+
+
+def isnan():
+    a = np.array([1, 2, 3, nan, 5, 6])
+    print(a)
+    for x in a:
+        if np.isnan(x):
+            print(np.inf)
+            # np.inf表示无限大
+            # print(np.inf > 10000000)
+        else:
+            print(x)
 
 
 def main():
@@ -127,7 +177,12 @@ def main():
     # range_test()
     # sigmoid(-5, 5)
     # zeros_test()
-    dot_multiplication()
+    # dot_multiplication()
+    # sigmoid(dot_multiplication())
+    # np_log()
+    # np_square()
+    # T_dot()
+    isnan()
 
 
 if __name__ == '__main__':
