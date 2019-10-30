@@ -73,6 +73,11 @@ def compute_grad(theta, x, y, l):
     grad = (1.0 / m) * x.T.dot(h - y) + (l / m) * np.r_[[[0]], theta[1:].reshape(-1, 1)]
     return grad.flatten()
 
+    m = y.size
+    h = sigmoid(X.dot(theta.reshape(-1, 1)))
+    grad = (1.0 / m) * X.T.dot(h - y) + (l / m) * np.r_[[[0]], theta[1:].reshape(-1, 1)]
+    return grad.flatten()
+
 
 # 梯度下降并优化
 def gradient_descent(mapped_fea, y, l):
@@ -114,15 +119,15 @@ def plotdata(data_set, label_x, label_y, label_pos, label_neg, axes):
     axes.legend(frameon=True, fancybox=True)
 
 
-def predict(theta, x):
+def predict(theta, mapped_fea):
     """
     Predict whether the label
     is 0 or 1 using learned logistic
     regression parameters
     """
-    m, n = x.shape
+    m, n = mapped_fea.shape
     p = zeros(shape=(m, 1))
-    h = sigmoid(x.dot(theta.T))
+    h = sigmoid(mapped_fea.dot(theta.T))
     for it in range(0, h.shape[0]):
         if h[it] > 0.5:
             p[it, 0] = 1
@@ -134,7 +139,7 @@ def predict(theta, x):
 def main():
     data_set, x, y = load_data_set()
     # 对给定的两个feature做一个多项式特征的映射
-    mapped_fea = map_feature(x[:5, 0], x[:5, 1])
+    mapped_fea = map_feature(x[:, 0], x[:, 1])
 
     # 决策边界，咱们分别来看看正则化系数lambda太大太小分别会出现什么情况
     # Lambda = 0 : 就是没有正则化，这样的话，就过拟合咯
@@ -143,9 +148,17 @@ def main():
     l = 1
     # y有2种数值1和0
     res = gradient_descent(mapped_fea, y, l)
-    print(res)
+    print("res=", res)
 
     # 准确率
+    print("predict(res.x, mapped_fea:{})".format(predict(res.x, mapped_fea)))
+    print("where:{}".format(where(predict(res.x, mapped_fea) == y)))
+    print("y={}".format(y[where(predict(res.x, mapped_fea) == y)]))
+    # >> > a = np.array([2, 4, 6, 8, 10])
+    # >> > np.where(a > 5)  # 返回索引
+    # (array([2, 3, 4]),)
+    # >> > a[np.where(a > 5)]  # 等价于 a[a>5]
+    # array([6, 8, 10])
     accuracy = y[where(predict(res.x, mapped_fea) == y)].size / float(y.size)*100.0
     # 画决策边界
     plotbestfit(data_set, res, x, accuracy, l, axes=None)

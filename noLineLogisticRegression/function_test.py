@@ -169,6 +169,33 @@ def isnan():
             print(x)
 
 
+def where_fun():
+    a = np.arange(9).reshape(3, 3)
+    # 条件condition a < 4，满足条件的改为True，不满足条件的False
+    # np.where  where2种都可以的
+    where(a < 4, True, False)
+    print(a < 4)
+    # [[True  True  True]
+    #  [True False False]
+    # [False False False]]
+    print(where(a < 5, a, 10*a))
+    # [[ 0  1  2]
+    #  [ 3  4 50]
+    #  [60 70 80]]
+    print(where(a > 5, a, 0))
+    # >> > a = np.array([2, 4, 6, 8, 10])
+    # >> > np.where(a > 5)  # 返回索引
+    # (array([2, 3, 4]),)
+    # >> > a[np.where(a > 5)]  # 等价于 a[a>5]
+    # array([6, 8, 10])
+    y = np.array([1, 2, 3, 4])
+    x = np.array([1, 2, 31, 4])
+    print(where(x))
+    print(where(x == y))
+    # 判断x，y是否相等，相等就显示出来，不相等就不显示
+    print(y[where(x == y)])
+
+
 def main():
     # test例子，需要查看那个例子就去掉注释
     # load_data_set_test()
@@ -182,7 +209,8 @@ def main():
     # np_log()
     # np_square()
     # T_dot()
-    isnan()
+    # isnan()
+    where_fun()
 
 
 if __name__ == '__main__':
