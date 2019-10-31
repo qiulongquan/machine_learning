@@ -196,6 +196,32 @@ def where_fun():
     print(y[where(x == y)])
 
 
+def meshgrid_test():
+    a = np.array([0, 1, 2])
+    b = np.array([0, 4])  # まずは２つの１次元配列を２つ作る。
+    aa, bb = np.meshgrid(a, b)  # 基本的な操作から。
+    # 处理完后aa 每一行都是0，1，2
+    # 处理完后bb每一列都是0，4
+    print(aa)
+    print(bb)
+    # 可以进行2个数组的加操作
+    print(aa+bb)
+    # 也可以进行乘操作然后再加操作
+    print(aa + 2*bb)
+
+
+def ravle():
+    x = np.array([[1, 2, 3], [4, 5, 6], [1, 2, 3]])
+    print(x)
+    # ravel関数を適用させると、一次元のリストが返却されます。
+    print(np.ravel(x))
+    a = np.ravel(x)
+    a[0] = 11
+    # a改动后，原始的x数组也会发生变化
+    print(a)
+    print(x)
+
+
 def main():
     # test例子，需要查看那个例子就去掉注释
     # load_data_set_test()
@@ -210,7 +236,9 @@ def main():
     # np_square()
     # T_dot()
     # isnan()
-    where_fun()
+    # where_fun()
+    # meshgrid_test()
+    ravle()
 
 
 if __name__ == '__main__':

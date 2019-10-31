@@ -2,7 +2,7 @@ from numpy import loadtxt,where
 from pylab import scatter, show, legend, xlabel, ylabel
 
 #load the dataset
-data = loadtxt("F:/PythonCode/LogisticRegression/data2.txt", delimiter=",")
+data = loadtxt("data2.txt", delimiter=",")
 #可以看出数据是一个二维数组，维度是100*3
 print(data)
 
@@ -15,8 +15,9 @@ y = data[:, 2]
 
 pos = where(y == 1)
 #pos是y中数据等于1的下标索引
-# print(pos)
-neg = where(y==0)
+print(pos)
+
+neg = where(y == 0)
 #neg是y中数据等于0的下标索引
 # print(neg)
 
@@ -25,5 +26,5 @@ scatter(X[pos,0],X[pos, 1],marker='o', c='b')
 scatter(X[neg,0],X[neg, 1],marker='x', c='r')
 
 #说明二维坐标中o表示Pass,x表示Fail
-legend(["y==1","y==0"])
+legend(["y==1", "y==0"])
 show()

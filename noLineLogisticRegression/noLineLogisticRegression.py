@@ -91,6 +91,15 @@ def gradient_descent(mapped_fea, y, l):
 
 
 def plotbestfit(data_set, res2, x, accuracy, l, axes):  # 画出最终分类的图
+    """
+        # x 是点的坐标（横坐标 纵坐标）
+        # y 是标量 有2种数值 0 和 1
+        # data_set 是包括了x和y的所有值全部取得 1.0709,0.10015,0 一共3个值
+        # res2 是梯度下降并优化的最终值（最小损失函数值）
+        # l 是一个常量参数
+        # accuracy 是计算出来的准确率
+        # axes默认是None
+    """
     # 对X,y的散列绘图
     plotdata(data_set, 'Microchip Test 1', 'Microchip Test 2', 'y = 1', 'y = 0', axes=None)
     # 画出决策边界
@@ -101,6 +110,7 @@ def plotbestfit(data_set, res2, x, accuracy, l, axes):  # 画出最终分类的�
     h = h.reshape(xx1.shape)
     if axes == None:
         axes = plt.gca()
+    # 画等高线Contours图像
     axes.contour(xx1, xx2, h, [0.5], linewidths=1, colors='g')
     axes.set_title('Train accuracy {}% with Lambda = {}'.format(np.round(accuracy, decimals=2), l))
     plt.show()
@@ -137,6 +147,9 @@ def predict(theta, mapped_fea):
 
 
 def main():
+    # x 是点的坐标（横坐标 纵坐标）
+    # y是标量 有2种数值 0 和 1
+    # data_set 是包括了x和y的所有值全部取得 1.0709,0.10015,0 一共3个值
     data_set, x, y = load_data_set()
     # 对给定的两个feature做一个多项式特征的映射
     mapped_fea = map_feature(x[:, 0], x[:, 1])
@@ -161,6 +174,14 @@ def main():
     # array([6, 8, 10])
     accuracy = y[where(predict(res.x, mapped_fea) == y)].size / float(y.size)*100.0
     # 画决策边界
+
+    # x 是点的坐标（横坐标 纵坐标）
+    # y 是标量 有2种数值 0 和 1
+    # data_set 是包括了x和y的所有值全部取得 1.0709,0.10015,0 一共3个值
+    # res 是梯度下降并优化的最终值（最小损失函数值）
+    # l 是一个常量参数
+    # accuracy 是计算出来的准确率
+    data_set, x, y = load_data_set()
     plotbestfit(data_set, res, x, accuracy, l, axes=None)
 
 

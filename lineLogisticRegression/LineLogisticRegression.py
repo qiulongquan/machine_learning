@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import minimize
 
-filename = "F:/PythonCode/LogisticRegression/data1.txt"
+filename = "data1.txt"
 
 def loadDataSet():
     # load the dataset
-    data = loadtxt("F:/PythonCode/LogisticRegression/data1.txt", delimiter=",")
+    data = loadtxt(filename, delimiter=",")
     # np.c_按colunm来组合array
     X = np.c_[np.ones((data.shape[0], 1)), data[:, 0:2]]
     y = np.c_[data[:, 2]]
