@@ -57,8 +57,15 @@ def sigmoid(x):
 # 定义损失函数
 def costfunctionreg(initial_theta, mapped_fea, y, l):
     m = y.size
+    # Sigmoid函数，即f(x) = 1 / (1 + e - x)。是神经元的非线性作用函数。
     # h=sigmoid计算完的结果数组
     h = sigmoid(mapped_fea.dot(initial_theta))
+    # 神经网络损失函数求导
+    # 神经网络的损失函数可以理解为是一个多级的复合函数，求导使用链式法则。
+    # https://blog.csdn.net/HHTNAN/article/details/78316785
+    # 交叉墒 cross-entropy 动画演示
+    # http://neuralnetworksanddeeplearning.com/chap3.html#exercise_35813
+
     j = -1.0 * (1.0 / m) * (np.log(h).T.dot(y) + np.log(1 - h).T.dot(1 - y)) + (l / (2.0 * m)) * np.sum(np.square(initial_theta[1:]))
     print("j数组", j)
     if np.isnan(j[0]):
