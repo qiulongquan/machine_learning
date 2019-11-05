@@ -32,7 +32,10 @@ https://blog.csdn.net/program_developer/article/details/79113765
 https://blog.csdn.net/guanmao4322/article/details/93362157
 https://github.com/Microstrong0305/machine_learning/commit/569c4d2ded0e8bd97c2cc7c9ea2c811868856b73
 【机器学习】逻辑回归python实现
-https://blog.csdn.net/qq_24671941/article/details/94766880
+https://blog.csdn.net/huakai16/article/details/78140304
+
+https://www.cnblogs.com/daniel-D/archive/2013/05/30/3109276.html
+
 单变量线性回归模型
 https://www.google.com/search?q=%E5%8D%95%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B&oq=%E5%8D%95%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B&aqs=chrome..69i57.25494j1j7&sourceid=chrome&ie=UTF-8
 
