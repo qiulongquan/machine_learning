@@ -222,6 +222,21 @@ def ravle():
     print(x)
 
 
+def reshape_test():
+    y = np.array([1, 3, 5, 7, 4, 6]).reshape(2, 3)
+    print(y)
+    y = y.reshape((-1, 1))
+    print(y)
+# [[1 3 5]
+#  [7 4 6]]
+# [[1]
+#  [3]
+#  [5]
+#  [7]
+#  [4]
+#  [6]]
+
+
 def main():
     # test例子，需要查看那个例子就去掉注释
     # load_data_set_test()
@@ -238,7 +253,8 @@ def main():
     # isnan()
     # where_fun()
     # meshgrid_test()
-    ravle()
+    # ravle()
+    reshape_test()
 
 
 if __name__ == '__main__':

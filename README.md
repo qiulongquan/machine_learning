@@ -24,6 +24,12 @@ centroids
 原文链接：https://blog.csdn.net/program_developer/article/details/79113765
 ```
 
+```
+Logistic 回归模型是目前广泛使用的学习算法之一，通常用来解决二分类问题，虽然名字中有“回归”，但它是一个分类算法。
+有些文献中译为“逻辑回归”，但中文“逻辑”与 logistic 和 logit 的含义相去甚远，因此下文中直接使用 logistic 表示。
+Logistic 回归的优点是计算代价不高，容易理解和实现；缺点是容易欠拟合，分类精度可能不高。
+```
+
 # 参考文档
 通俗介绍神经网络中激活函数的作用
 https://blog.csdn.net/program_developer/article/details/79190616
@@ -50,5 +56,15 @@ https://www.google.com/search?q=%E5%8D%95%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5
 下降算法中系数的下降函数
 内容需要重点看
 http://melonteam.com/posts/dan_bian_liang_xian_xing_hui_gui_mo_xing_jie_shao/
+
+【机器学习】逻辑回归原理介绍　　讲的比较容易懂
+https://blog.csdn.net/qq_24671941/article/details/94764693
+
+对数公式
+https://baike.baidu.com/item/%E5%AF%B9%E6%95%B0%E5%85%AC%E5%BC%8F
+
+任意对数，反对数在线计算器
+https://www.99cankao.com/algebra/logrithm.php
+
 交叉熵代价函数  中文翻译
 https://hit-scir.gitbooks.io/neural-networks-and-deep-learning-zh_cn/content/chap3/c3s1.html
