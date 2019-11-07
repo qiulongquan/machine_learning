@@ -146,6 +146,8 @@ def show_test2():
     print(classify.W[2])
 
     x1 = np.arange(4, 7.5, 0.5)
+    # 因为分类线的方程式
+    # w[0] + w[1] * x1 + w[2] * x2 = 0, 那你得到坐标x2的值，就是解一下这个方程
     x2 = (- classify.W[0] - classify.W[1] * x1) / classify.W[2]
 
     plt.plot(x1, x2, color='black')

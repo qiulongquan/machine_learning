@@ -28,6 +28,14 @@ centroids
 Logistic 回归模型是目前广泛使用的学习算法之一，通常用来解决二分类问题，虽然名字中有“回归”，但它是一个分类算法。
 有些文献中译为“逻辑回归”，但中文“逻辑”与 logistic 和 logit 的含义相去甚远，因此下文中直接使用 logistic 表示。
 Logistic 回归的优点是计算代价不高，容易理解和实现；缺点是容易欠拟合，分类精度可能不高。
+
+
+现在是分成两类，如果数据需要分成三类或者更多该怎么办? 
+ ---- 假如有A,B,C三类， 把其中A类做为1，BC做为0,然后做Logistic regression, 
+得到模型a, 同理将B类做为1,AC作为0,得到模型b, 再同理得到模型c.    
+最后测试的时候， 对任意一个数据点x, 我们能够得到x分别属于A,B,C三类的概率值 
+最后比较大小，哪个大，这个x就属于哪一类
+原文链接：https://blog.csdn.net/ppn029012/article/details/8775597
 ```
 
 # 参考文档
@@ -65,6 +73,9 @@ https://baike.baidu.com/item/%E5%AF%B9%E6%95%B0%E5%85%AC%E5%BC%8F
 
 任意对数，反对数在线计算器
 https://www.99cankao.com/algebra/logrithm.php
+
+机器学习 --- 1. 线性回归与分类, 解决与区别    这个文章讲解了回归和分类的基本解决方法，简单容易理解 推荐
+https://blog.csdn.net/ppn029012/article/details/8775597
 
 交叉熵代价函数  中文翻译
 https://hit-scir.gitbooks.io/neural-networks-and-deep-learning-zh_cn/content/chap3/c3s1.html
