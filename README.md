@@ -39,18 +39,18 @@ Logistic 回归的优点是计算代价不高，容易理解和实现；缺点�
 ```
 
 # 参考文档
-通俗介绍神经网络中激活函数的作用
-https://blog.csdn.net/program_developer/article/details/79190616
-https://blog.csdn.net/program_developer/article/details/79113765
-通俗介绍神经网络中激活函数的作用
-https://blog.csdn.net/guanmao4322/article/details/93362157
-https://github.com/Microstrong0305/machine_learning/commit/569c4d2ded0e8bd97c2cc7c9ea2c811868856b73
-【机器学习】逻辑回归python实现
+通俗介绍神经网络中激活函数的作用  
+https://blog.csdn.net/program_developer/article/details/79190616  
+https://blog.csdn.net/program_developer/article/details/79113765  
+通俗介绍神经网络中激活函数的作用  
+https://blog.csdn.net/guanmao4322/article/details/93362157  
+https://github.com/Microstrong0305/machine_learning/commit/569c4d2ded0e8bd97c2cc7c9ea2c811868856b73  
+【机器学习】逻辑回归python实现  
 https://blog.csdn.net/huakai16/article/details/78140304
 
 https://www.cnblogs.com/daniel-D/archive/2013/05/30/3109276.html
 
-单变量线性回归模型
+单变量线性回归模型  
 https://www.google.com/search?q=%E5%8D%95%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B&oq=%E5%8D%95%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B&aqs=chrome..69i57.25494j1j7&sourceid=chrome&ie=UTF-8
 
 
@@ -62,20 +62,20 @@ https://www.google.com/search?q=%E5%8D%95%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5
 代价函数
 梯度下降  全局最优解  局部最优解
 下降算法中系数的下降函数
-内容需要重点看
+内容需要重点看  
 http://melonteam.com/posts/dan_bian_liang_xian_xing_hui_gui_mo_xing_jie_shao/
 
-【机器学习】逻辑回归原理介绍　　讲的比较容易懂
+【机器学习】逻辑回归原理介绍　　讲的比较容易懂  
 https://blog.csdn.net/qq_24671941/article/details/94764693
 
-对数公式
+对数公式  
 https://baike.baidu.com/item/%E5%AF%B9%E6%95%B0%E5%85%AC%E5%BC%8F
 
-任意对数，反对数在线计算器
+任意对数，反对数在线计算器  
 https://www.99cankao.com/algebra/logrithm.php
 
-机器学习 --- 1. 线性回归与分类, 解决与区别    这个文章讲解了回归和分类的基本解决方法，简单容易理解 推荐
-https://blog.csdn.net/ppn029012/article/details/8775597
+机器学习 --- 1. 线性回归与分类, 解决与区别    这个文章讲解了回归和分类的基本解决方法，简单容易理解 推荐   
+https://blog.csdn.net/ppn029012/article/details/8775597  
 
-交叉熵代价函数  中文翻译
-https://hit-scir.gitbooks.io/neural-networks-and-deep-learning-zh_cn/content/chap3/c3s1.html
+交叉熵代价函数  中文翻译  
+https://hit-scir.gitbooks.io/neural-networks-and-deep-learning-zh_cn/content/chap3/c3s1.html  
