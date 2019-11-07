@@ -54,7 +54,7 @@ https://www.cnblogs.com/daniel-D/archive/2013/05/30/3109276.html
 https://www.google.com/search?q=%E5%8D%95%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B&oq=%E5%8D%95%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B&aqs=chrome..69i57.25494j1j7&sourceid=chrome&ie=UTF-8
 
 单变量线性回归（一）  
-jianshu.com/p/e288403e49d2  
+https://www.jianshu.com/p/e288403e49d2  
 hθ(x) = θ0 + θ1x
 
 表达式中的θ0和 θ1这些参数，我们将其（θi）称为模型参数。
