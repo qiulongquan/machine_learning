@@ -55,7 +55,7 @@ https://www.google.com/search?q=%E5%8D%95%E5%8F%98%E9%87%8F%E7%BA%BF%E6%80%A7%E5
 
 单变量线性回归（一）  
 https://www.jianshu.com/p/e288403e49d2  
-hθ(x) = θ0 + θ1x
+hθ(x) = θ0 + θ1x  
 
 表达式中的θ0和 θ1这些参数，我们将其（θi）称为模型参数。
 
