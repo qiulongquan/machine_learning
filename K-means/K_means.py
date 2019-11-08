@@ -35,41 +35,44 @@ def kmeans(dataSet, k):
     :param k:  需要聚类的个数
     :return:
     '''
-    # 样本的个数
+    # 样本的个数 也就是行数
     numSamples = dataSet.shape[0]
     # 第一列存储该样本所属的集群
     # 第二列存储此样本与其质心之间的误差
     clusterAssment = mat(zeros((numSamples, 2)))
     clusterChanged = True
 
-    ## step 1:从数据集中随机选择k个样本作为初始均值向量
+    # step 1:从数据集中随机选择k个样本作为初始均值向量
     centroids = initCentroids(dataSet, k)
 
     while clusterChanged:
         clusterChanged = False
-        ## 循环每一个样本
+        # 循环每一个样本
         for i in range(numSamples):
             minDist = 100000.0  #存放最短的距离
             minIndex = 0     # 第i个样本的簇标记
-            ## 循环每一个均值向量
-            ## step 2: 找到第i个样本的最近的均值向量
+            # 循环每一个均值向量
+            # step 2: 找到第i个样本的最近的均值向量
             for j in range(k):
+                # 计算欧氏距离
                 distance = euclDistance(centroids[j, :], dataSet[i, :])
                 if distance < minDist:
                     minDist = distance
                     minIndex = j
 
-                    ## step 3: 更新第i个样本的簇标记和误差
+                    # step 3: 更新第i个样本的簇标记和误差
             if clusterAssment[i, 0] != minIndex:
                 clusterChanged = True
                 clusterAssment[i, :] = minIndex, minDist ** 2
 
-                ## step 4: 更新均值向量
+                # step 4: 更新均值向量
         for j in range(k):
             pointsInCluster = dataSet[nonzero(clusterAssment[:, 0].A == j)[0]]
             centroids[j, :] = mean(pointsInCluster, axis=0)
 
     print('Congratulations, cluster complete!')
+    # centroids这个是中心点坐标
+    # clusterAssment 这个是每个中心点坐标周边的簇的坐标
     return centroids, clusterAssment
 
 
@@ -103,7 +106,7 @@ def showCluster(dataSet, k, centroids, clusterAssment):
 
 
 def main():
-    ## step 1: load data
+    # step 1: load data
     print("step 1: load data...")
     dataSet = []
     # 读取excel文档的类库
@@ -114,14 +117,14 @@ def main():
         lineArr = table.row_values(line)
         dataSet.append([float(lineArr[0]), float(lineArr[1])])
 
-    ## step 2: clustering...
+    # step 2: clustering...
     print("step 2: clustering...")
     # 数组导入，然后返回一个矩阵，值不变
     dataSet = mat(dataSet)
     k = 3
     centroids, clusterAssment = kmeans(dataSet, k)
 
-    ## step 3: show the result
+    # step 3: show the result
     print("step 3: show the result...")
     showCluster(dataSet, k, centroids, clusterAssment)
 
