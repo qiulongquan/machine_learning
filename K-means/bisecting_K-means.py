@@ -103,28 +103,28 @@ def showCluster(dataSet, k, centroids, clusterAssment):
     if dim != 2:
         print ("Sorry! I can not draw because the dimension of your data is not 2!")
         return 1
+    marker1 = ['o', 's', 'p', '*', '+', 'x', 'v', '^', '<', '>']
 
-    mark = ['or', 'ob', 'og', 'ok', '^r', '+r', 'sr', 'dr', '<r', 'pr']
-    if k > len(mark):
+    color1 = ['b', 'g', 'r', 'c', 'm', 'y', 'k', 'b', 'g', 'r']
+    if k > len(marker1):
         print ("Sorry! Your k is too large! please contact Zouxy")
         return 1
 
         # draw all samples
     for i in range(numSamples):
         markIndex = int(clusterAssment[i, 0])
-        plt.plot(dataSet[i, 0], dataSet[i, 1], mark[markIndex])
+        plt.plot(dataSet[i, 0], dataSet[i, 1], marker=marker1[markIndex], color=color1[markIndex])
 
-    mark = ['Dr', 'Db', 'Dg', 'Dk', '^b', '+b', 'sb', 'db', '<b', 'pb']
     # draw the centroids
     for i in range(k):
-        plt.plot(centroids[i, 0], centroids[i, 1], mark[i], markersize=12)
+        plt.plot(centroids[i, 0], centroids[i, 1], marker=marker1[i], color=color1[i], markersize=12)
     plt.show()
 
 def main():
     ## step 1: load data
     print ("step 1: load data...")
     dataSet = []
-    data = xlrd.open_workbook('C:/Users/Microstrong/Desktop/watermelon4.0.xlsx')
+    data = xlrd.open_workbook('watermelon4.0.xlsx')
     table = data.sheets()[0]
     for line in range(0,table.nrows):
         lineArr = table.row_values(line)
@@ -133,7 +133,7 @@ def main():
     ## step 2: clustering...
     print ("step 2: clustering...")
     dataSet = mat(dataSet)
-    k = 3
+    k = 6
     centroids, clusterAssment = biKmeans(dataSet, k)
 
     ## step 3: show the result

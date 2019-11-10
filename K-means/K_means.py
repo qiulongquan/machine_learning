@@ -55,6 +55,8 @@ def kmeans(dataSet, k):
             # step 2: 找到第i个样本的最近的均值向量
             for j in range(k):
                 # 计算欧氏距离
+                # 简单解释一下欧氏距离原理，随机找到J个中心点，然后让所有的样品点都和中心点计算欧氏距离，找到最小的值。这个点就从属于这个中心点。
+                # 然后同理计算完所有的样品点，这样所有的样品点都计算完成后都找到了距离最近的中心点，就把所有的样品点分割完成了。
                 distance = euclDistance(centroids[j, :], dataSet[i, :])
                 if distance < minDist:
                     minDist = distance
